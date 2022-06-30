@@ -12,13 +12,13 @@ You can assume that the 2nd number passed in will always be greater than the fir
 Note: This problem should account for negative number input
 */
 
+    
 
 /* console.logs to test */
 console.log("sumOfOdds");
-console.log("////////////////////////////////////////////////////////////////////////////\n");
+
 //Add console.logs here to test!  Feel free to format this section however you like
 
-console.log("\n////////////////////////////////////////////////////////////////////////////\n");
 
 /*
 Write a function arraySubtract that takes in 2 arrays of numbers and subtracts the item in each index at array 1 with its respective item in each index at array 2.
@@ -26,6 +26,22 @@ The result of each calculation should be placed in a new array and that array sh
 For example arraySubtract([7,9],[2,6]) should return [5,3]
 You can assume the arrays that are being input are of the same length
 */
+
+    let array1 = [7,9];
+    let array2 = [2,6];
+    let array3 = (array1, array2) => {
+        let array = [];
+        for(let i = 0; i < array1.length; i++){
+           let arr = Math.abs((array1[i] || 0) - (array2[i] || 0));
+           array[i] = arr;
+        };
+        return array;
+     };
+     console.log(array(array1, array2));
+
+
+
+
 
 
 /* console.logs to test */
@@ -41,7 +57,8 @@ Write a function that takes in 3 parameters in this order: 1 array, 1 string, an
 Add the first string to the beginning of the array
 Add the second string to the end of the array
 Return the modified array
-*/
+*/let sports = ['track', 'football', 'basketball'];
+console.log("Kevin played " + sports + " and still plays for fun once in a while.")
 
 
 /* console.logs to test */
@@ -57,6 +74,13 @@ Write a function longestString that takes in an array of strings as a parameter 
 If there is nothing in the array, return an empty string ('')
 You can assume that no two strings will have the same length in the array
 */
+let longeststring = ['hi', 'there', 'its', 'kevo'];
+    ls = longeststring.reduce((l,s) => l > s.length ? l : s.length, 0);
+
+
+const result = longeststring.filter(str => str.length == ls);
+
+console.log(result);
 
 
 
@@ -73,7 +97,9 @@ Write a function sToR that replaces every 's' character in the string with an 'r
 If the letter in the original string is uppercase the letter in the output string should be as well
 Do NOT use replaceAll or similar string methods.  If you are unsure what that means, ask before you use a string method!  (toUpperCase() and toLowerCase() should be all you need if anything)
 */
-
+let sToR = 'S and R'
+console.log(sToR.replace('S', 'R'))
+console.log(sToR.replace('R', 'S'))
 
 /* console.logs to test */
 console.log("sToR");
@@ -88,6 +114,12 @@ Write a function divisibleBy4And7 that takes in a number and returns true if it 
 If it is not, return false.
 */
 
+let a = 4
+let b = 7
+if (a/null || b/null){
+    console.log(true)
+
+}
 
 /* console.logs to test */
 console.log("divisibleBy4And7");
@@ -103,9 +135,16 @@ return true if the string contains both an exclamation point (!) AND a question 
 Return false if otherwise
 */
 
-function exclamationAndQuestion(str){
-    
+
+let sentence = "Hey! Are we gonna go?"
+let str = "!" && "?"
+
+console.log(sentence.includes(str))
+
+if (str != "!" && "?"){
+    console.log(false)
 }
+
 
 /* console.logs to test */
 console.log("exclamationAndQuestion");
@@ -120,7 +159,10 @@ Write a function called countAB that takes in a single string and returns an arr
 No need to add the count of A and B together.  Again, we want an array with the separate counts of each
 Your function should account for both cases (upper and lower) of each letter.
 */
+let countAB= "AB ab"
+ let array = countaAB.split(" ")
 
+ console.log(array)
 
 /* console.logs to test */
 console.log("countAB");
